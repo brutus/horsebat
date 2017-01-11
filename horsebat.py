@@ -18,7 +18,7 @@ from random import randint
 from slugify import slugify
 
 
-__version__ = '0.1.0'
+__version__ = '0.1.1'
 
 DEFAULT_WORDFILE = '/usr/share/dict/words'
 
