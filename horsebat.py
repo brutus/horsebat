@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 """
-Generates random "passwords" from wordlists.
+Generates random "passwords" from word lists.
 
 This is a _very basic_ attempt to generate passwords inspired by this:
 <https://xkcd.com/936/>.
@@ -24,7 +24,7 @@ DEFAULT_WORDFILE = '/usr/share/dict/words'
 
 DESCRIPTION = (
     "Loads random words from a source file (one word per line), "
-    "slugifies each, maybe changes the case and glues them together."
+    "slugifies each, maybe changes the case and joins them together."
 )
 
 
@@ -58,7 +58,7 @@ def parse_args(argv=None):
     )
     g_cleanup.add_argument(
       '-s', '--separator', metavar='SEPERATOR',
-      help="seperate cleaned words with this ('%(default)s')"
+      help="separate cleaned words with this ('%(default)s')"
     )
     g_cleanup.add_argument(
       '-S', '--slug-separator', metavar='SEPERATOR',
@@ -68,11 +68,11 @@ def parse_args(argv=None):
     g_select = ap.add_argument_group('Word Selection')
     g_select.add_argument(
       '-m', '--min-length', type=int,
-      help="word need to be at least this long ('%(default)s')"
+      help="word need to be at least this long (%(default)s)"
     )
     g_select.add_argument(
       '-M', '--max-length', type=int,
-      help="word can be only this long ('%(default)s')"
+      help="word can be only this long (%(default)s)"
     )
     g_select.add_argument(
       '-r', '--no-random', action='store_false', dest='random',
@@ -80,11 +80,11 @@ def parse_args(argv=None):
     )
     g_select.add_argument(
       '-u', '--no-unique', action='store_false', dest='unique',
-      help="might use the same worde more than once"
+      help="might use the same words more than once"
     )
     g_select.add_argument(
       '-w', '--word-count', type=int, dest='count',
-      help="glue this many words together ('%(default)s')"
+      help="glue this many words together (%(default)s)"
     )
     # defaults
     ap.set_defaults(
@@ -120,7 +120,7 @@ def clean_word(word, case=None, separator=''):
     """
     Returns a cleaned (slugified) version of *word*.
 
-    If *case* is `True`, the cleaned result is converted to tilte case, or to
+    If *case* is `True`, the cleaned result is converted to title case, or to
     lower case, if *case* is set to `False`. Otherwise it is left untouched.
 
     """
@@ -136,7 +136,7 @@ def clean_word(word, case=None, separator=''):
 
 def check_word(word, min_length=4, max_length=12):
     """
-    Retruns `True` if the word fits in the rules, `Fale` otherwise.
+    Returns `True` if the word fits in the rules, `False` otherwise.
 
     """
     word_length = len(word)
@@ -174,7 +174,7 @@ def get_password(source, count, separator='', case=None):
     Returns *wordcount* words from *source* joined with *separator*.
 
     If *case* is set to `upper` or `lower` the case of the first char
-    is cast to uppper or lower case.
+    is cast to upper or lower case.
 
     """
     tokens = [next(source) for x in range(count)]
@@ -188,7 +188,7 @@ def get_password(source, count, separator='', case=None):
 
 def main(argv=None):
     """
-    Parses *argv* (default = commandline) and prints to STDOUT.
+    Parses *argv* (default = command line) and prints to STDOUT.
 
     """
     args = parse_args(argv)

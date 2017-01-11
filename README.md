@@ -1,7 +1,7 @@
 # HorseBat
 
-A small script to generates random "passwords". And a _very basic_ attempt to
-generate passwords inspired by this: <https://xkcd.com/936/>.
+A _very basic_ attempt to generate passwords inspired by this:
+<https://xkcd.com/936/>.
 
 
 ## Example
@@ -47,11 +47,11 @@ Word Cleanup:
 
 Word Selection:
   -m MIN_LENGTH, --min-length MIN_LENGTH
-                        word need to be at least this long ('4')
+                        word need to be at least this long (4)
   -M MAX_LENGTH, --max-length MAX_LENGTH
-                        word can be only this long ('12')
+                        word can be only this long (12)
   -r, --no-random       don't select words at random
   -u, --no-unique       might use the same worde more than once
   -w COUNT, --word-count COUNT
-                        glue this many words together ('4')
+                        glue this many words together (4)
 ```
